@@ -6,7 +6,10 @@ function Pet (type, breed, name, age, color) {
   this.ageOf = age;
   this.colorOf = color;
   this.adopted = false;
+  this.id = pets.length + 1;
+  pets.push(this);
 }
+var pets = [];
 
 //Starting list of pets.
 var pets1 = new Pet("cat", "Seimese", "Meow", 11, ["White"]);
@@ -18,10 +21,16 @@ var pets6 = new Pet("dog", "Husky", "Wolf", 10, ["White","black", "grey"]);
 var pets7 = new Pet("Lizard", "Iguana", "Where is it", 120, ["Green"]);
 var pets8 = new Pet("Bird", "Perigrin Falcon", "Chirp", 15, ["white","black"]);
 
-// This is an object to push pets too
-var pets = {
-  list : [pets1, pets2, pets3, pets4, pets5, pets6, pets7, pets8],
+
+function findPet(id) {
+  for (var i = 1; i < pets.length; i++) {
+    if (pets[i-1].id === id) {
+      return pets[i-1];
+    }
+  }
 }
+
+// This is an object to push pets too
 
 //This will display pet information
 Pet.prototype.show = function () {
@@ -39,6 +48,12 @@ Pet.prototype.show = function () {
   '</div>' +
   '');}
 
+//This will write the series of pets
+
+
+
+
+
 $(function(){
   $("#theDonateButton").click(function() {
     var type = $('input[name=type]:checked', '.typeOfAnimal').val();
@@ -47,6 +62,7 @@ $(function(){
     var age = $("input#ageOfAnimal").val();
     var color = $(":checkbox:checked").map(function() { return this.value; }).get().join().split(",");
     var newPet = new Pet(type, breed, name, age, color);
+
     console.log(newPet)
     newPet.show();
   });
