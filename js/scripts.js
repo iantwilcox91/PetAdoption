@@ -20,7 +20,7 @@ var pets8 = new Pet("Bird", "Perigrin Falcon", "Chirp", 15, ["white","black"]);
 
 // This is an object to push pets too
 var pets = {
-  list : [ "pets1", "pets2", "pet3", "pets4", "pets5", "pets6", "pets7", "pets8",],
+  list : [pets1, pets2, pet3, pets4, pets5, pets6, pets7, pets8],
 }
 
 //This will display pet information
