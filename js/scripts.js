@@ -1,13 +1,10 @@
 
 //Pet object
-function Pet (type, specie, name, age, color, attitude) {
+function Pet (type, breed, name, age, color) {
   this.typeOf = type;
-  this.specieOf = specie;
+  this.breed = breed;
   this.nameOf = name;
   this.ageOf = age;
   this.colorOf = color;
-  this.attitudeOf = attitude;
   this.adopted = false;
 }
-
-  
